@@ -58,6 +58,7 @@ export default function Hero() {
                     >
                         <Link
                             href="#projects"
+                            aria-label="View My Projects"
                             className="group px-8 py-3.5 bg-[var(--accent-primary)] text-black font-semibold rounded-full flex items-center gap-2 hover:bg-[var(--accent-primary)]/90 transition-all hover:scale-105"
                         >
                             View My Work
@@ -67,6 +68,8 @@ export default function Hero() {
                         <Link
                             href="/resume.pdf"
                             target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Download Resume PDF"
                             className="group px-8 py-3.5 border border-[var(--border)] text-[var(--text-primary)] font-medium rounded-full flex items-center gap-2 hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-all"
                         >
                             Download Resume

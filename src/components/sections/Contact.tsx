@@ -83,13 +83,13 @@ export default function Contact() {
                                 </a>
 
                                 <div className="flex gap-4 pt-4">
-                                    <Link href="https://github.com" target="_blank" className="p-3 bg-[var(--bg-secondary)] rounded-full hover:text-[var(--accent-primary)] hover:scale-110 transition-all">
+                                    <Link href="https://github.com" target="_blank" aria-label="GitHub Profile" className="p-3 bg-[var(--bg-secondary)] rounded-full hover:text-[var(--accent-primary)] hover:scale-110 transition-all">
                                         <Github size={20} />
                                     </Link>
-                                    <Link href="https://linkedin.com" target="_blank" className="p-3 bg-[var(--bg-secondary)] rounded-full hover:text-[var(--accent-primary)] hover:scale-110 transition-all">
+                                    <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile" className="p-3 bg-[var(--bg-secondary)] rounded-full hover:text-[var(--accent-primary)] hover:scale-110 transition-all">
                                         <Linkedin size={20} />
                                     </Link>
-                                    <Link href="https://twitter.com" target="_blank" className="p-3 bg-[var(--bg-secondary)] rounded-full hover:text-[var(--accent-primary)] hover:scale-110 transition-all">
+                                    <Link href="https://twitter.com" target="_blank" aria-label="Twitter Profile" className="p-3 bg-[var(--bg-secondary)] rounded-full hover:text-[var(--accent-primary)] hover:scale-110 transition-all">
                                         <Twitter size={20} />
                                     </Link>
                                 </div>
