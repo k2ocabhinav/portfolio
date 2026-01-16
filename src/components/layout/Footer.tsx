@@ -16,7 +16,7 @@ export default function Footer() {
                 {/* Copyright */}
                 <div className="text-[var(--text-secondary)] text-sm text-center md:text-left">
                     <p>&copy; {new Date().getFullYear()} Abhinav. All rights reserved.</p>
-                    <p className="mt-1 text-xs">Built with Next.js 16, TypeScript & Tailwind</p>
+                    <p className="mt-1 text-xs">Built with Next.js, TypeScript & Tailwind CSS</p>
                 </div>
 
                 {/* Social Links */}

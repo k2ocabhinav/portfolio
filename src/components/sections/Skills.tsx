@@ -50,7 +50,7 @@ export default function Skills() {
                                                 <span className="font-medium text-[var(--text-primary)]">{skill.name}</span>
                                                 <span className="text-sm text-[var(--text-secondary)]">{skill.level}%</span>
                                             </div>
-                                            <div className="w-full h-2 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
+                                            <div className="w-full h-2 bg-[var(--border)] rounded-full overflow-hidden">
                                                 <div
                                                     className="h-full bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-full relative"
                                                     style={{ width: `${skill.level}%` }}
