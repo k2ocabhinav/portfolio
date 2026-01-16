@@ -16,22 +16,32 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://abhinav.dev'),
-  title: "Abhinav.dev | Backend Engineer",
-  description: "Portfolio of Abhinav, a Backend Engineer specializing in scalable systems.",
+  title: {
+    default: 'Abhinav | Backend Engineer',
+    template: '%s | Abhinav.dev'
+  },
+  description: 'Backend Engineer specializing in scalable distributed systems and high-performance APIs.',
+  keywords: ['Backend Engineer', 'Node.js', 'TypeScript', 'System Design', 'Distributed Systems', 'Cloud Architecture'],
+  authors: [{ name: 'Abhinav' }],
+  creator: 'Abhinav',
   openGraph: {
-    title: "Abhinav.dev | Backend Engineer",
-    description: "Building scalable systems & solving complex problems.",
-    url: "https://abhinav.dev",
-    siteName: "Abhinav.dev",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://abhinav.dev',
+    siteName: 'Abhinav.dev',
+    title: 'Abhinav | Backend Engineer',
+    description: 'Building scalable systems and solving complex engineering problems.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Abhinav | Backend Engineer',
+    description: 'Building scalable systems.',
+    images: ['/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
