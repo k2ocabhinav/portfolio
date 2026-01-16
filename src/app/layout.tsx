@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://abhinav.dev'),
   title: "Abhinav.dev | Backend Engineer",
   description: "Portfolio of Abhinav, a Backend Engineer specializing in scalable systems.",
   openGraph: {

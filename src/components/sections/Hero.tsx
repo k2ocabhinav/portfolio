@@ -1,0 +1,86 @@
+"use client";
+
+import { ArrowRight, Download } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export default function Hero() {
+    return (
+        <section
+            id="home"
+            className="relative min-h-[calc(100vh-70px)] flex items-center justify-center overflow-hidden bg-[var(--bg-primary)]"
+        >
+            {/* Background Gradient/Mesh */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[var(--accent-primary)]/5 blur-[100px]" />
+                <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[var(--accent-secondary)]/5 blur-[100px]" />
+            </div>
+
+            <div className="relative max-w-6xl mx-auto px-4 text-center z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h2 className="text-[var(--accent-primary)] font-medium tracking-wide uppercase mb-4">
+                        Hello, I&apos;m
+                    </h2>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                    <h1 className="text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
+                        Abhinav
+                    </h1>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    <h2 className="text-3xl md:text-5xl font-semibold text-[var(--text-secondary)] mb-8">
+                        Backend <span className="text-[var(--text-primary)]">Engineer</span>
+                    </h2>
+                </motion.div>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="max-w-2xl mx-auto text-lg md:text-xl text-[var(--text-secondary)] mb-10 leading-relaxed"
+                >
+                    Building robust, scalable server-side systems and solving complex engineering problems.
+                    Specialized in high-performance APIs and distributed architectures.
+                </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                >
+                    <Link
+                        href="#projects"
+                        className="group px-8 py-3.5 bg-[var(--accent-primary)] text-black font-semibold rounded-full flex items-center gap-2 hover:bg-[var(--accent-primary)]/90 transition-all hover:scale-105"
+                    >
+                        View My Work
+                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+
+                    <Link
+                        href="/resume.pdf"
+                        target="_blank"
+                        className="group px-8 py-3.5 border border-[var(--border)] text-[var(--text-primary)] font-medium rounded-full flex items-center gap-2 hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-all"
+                    >
+                        Download Resume
+                        <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
+                    </Link>
+                </motion.div>
+            </div>
+        </section>
+    );
+}
