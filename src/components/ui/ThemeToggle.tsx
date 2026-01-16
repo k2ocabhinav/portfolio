@@ -1,21 +1,22 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { useTheme } from "@/hooks/useTheme";
 import { motion } from "framer-motion";
 
+// Hydration-safe mounted check using useSyncExternalStore
+const emptySubscribe = () => () => { };
+const getServerSnapshot = () => false;
+const getClientSnapshot = () => true;
+
 export default function ThemeToggle() {
     const { theme, toggleTheme } = useTheme();
-    // Mount state to avoid hydration mismatch
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+    // useSyncExternalStore is the React 18+ recommended way to handle hydration
+    const mounted = useSyncExternalStore(emptySubscribe, getClientSnapshot, getServerSnapshot);
 
     if (!mounted) {
-        return <div className="w-10 h-10" />; // Placeholder
+        return <div className="w-10 h-10" aria-hidden="true" />; // Placeholder
     }
 
     return (
