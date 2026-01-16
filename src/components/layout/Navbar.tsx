@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -17,6 +18,7 @@ const navLinks = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const activeSection = useActiveSection();
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--bg-secondary)]/80 backdrop-blur-md border-b border-[var(--border)] h-[70px]">
@@ -36,7 +38,10 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+                                className={`text-sm font-medium transition-colors ${(link.href === "/" ? activeSection === "home" : link.href === `#${activeSection}`)
+                                        ? "text-[var(--accent-primary)]"
+                                        : "text-[var(--text-secondary)] hover:text-[var(--accent-primary)]"
+                                    }`}
                             >
                                 {link.name}
                             </Link>
