@@ -39,3 +39,24 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE and editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Sensitive files - never commit these
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+
+# Temporary and cache files
+*.log
+*.tmp
+.cache/
+
+# OS generated
+Thumbs.db
