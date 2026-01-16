@@ -13,7 +13,7 @@ export const projects: Project[] = [
     {
         id: "1",
         title: "Portfolio Website",
-        description: "A modern, responsive portfolio built with Next.js 16 App Router, featuring SSG, Framer Motion animations, dark/light theme, and a serverless contact API with rate limiting.",
+        description: "A modern, responsive portfolio built with Next.js App Router, featuring SSG, Framer Motion animations, dark/light theme, and a serverless contact API with rate limiting.",
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
         link: "https://portfolio-fr2nianky-abhinavs-projects-bbd83794.vercel.app/",
         github: "https://github.com/k2ocabhinav/portfolio",
