@@ -29,20 +29,13 @@ export default function Hero() {
                         </h2>
                     </motion.div>
 
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
-                        Abhinav
-                    </h1>
-                    <motion.div variants={fadeInUp}>
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
-                            Abhinav
-                        </h1>
-                    </motion.div>
 
                     <motion.div variants={fadeInUp}>
                         <h2 className="text-3xl md:text-5xl font-semibold text-[var(--text-secondary)] mb-8">
                             Backend <span className="text-[var(--text-primary)]">Engineer</span>
                         </h2>
                     </motion.div>
+
 
                     <motion.p
                         variants={fadeInUp}
