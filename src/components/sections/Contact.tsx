@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, Mail, Github, Linkedin, Twitter, Download } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -44,9 +45,9 @@ export default function Contact() {
         <section id="contact" className="py-20 bg-[var(--bg-secondary)]">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
@@ -61,9 +62,9 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
                     {/* Contact Info */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
+                        variants={fadeInLeft}
+                        initial="initial"
+                        whileInView="whileInView"
                         viewport={{ once: true }}
                         className="space-y-8"
                     >
@@ -113,9 +114,9 @@ export default function Contact() {
 
                     {/* Contact Form */}
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
+                        variants={fadeInRight}
+                        initial="initial"
+                        whileInView="whileInView"
                         viewport={{ once: true }}
                         className="bg-[var(--bg-primary)] p-8 rounded-2xl border border-[var(--border)]"
                     >

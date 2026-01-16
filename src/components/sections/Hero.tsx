@@ -3,6 +3,7 @@
 import { ArrowRight, Download } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
     return (
@@ -18,67 +19,57 @@ export default function Hero() {
 
             <div className="relative max-w-6xl mx-auto px-4 text-center z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={staggerContainer}
+                    initial="hidden"
+                    animate="show"
                 >
-                    <h2 className="text-[var(--accent-primary)] font-medium tracking-wide uppercase mb-4">
-                        Hello, I&apos;m
-                    </h2>
-                </motion.div>
+                    <motion.div variants={fadeInUp}>
+                        <h2 className="text-[var(--accent-primary)] font-medium tracking-wide uppercase mb-4">
+                            Hello, I&apos;m
+                        </h2>
+                    </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                >
-                    <h1 className="text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
-                        Abhinav
-                    </h1>
-                </motion.div>
+                    <motion.div variants={fadeInUp}>
+                        <h1 className="text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
+                            Abhinav
+                        </h1>
+                    </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                    <h2 className="text-3xl md:text-5xl font-semibold text-[var(--text-secondary)] mb-8">
-                        Backend <span className="text-[var(--text-primary)]">Engineer</span>
-                    </h2>
-                </motion.div>
+                    <motion.div variants={fadeInUp}>
+                        <h2 className="text-3xl md:text-5xl font-semibold text-[var(--text-secondary)] mb-8">
+                            Backend <span className="text-[var(--text-primary)]">Engineer</span>
+                        </h2>
+                    </motion.div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="max-w-2xl mx-auto text-lg md:text-xl text-[var(--text-secondary)] mb-10 leading-relaxed"
-                >
-                    Building robust, scalable server-side systems and solving complex engineering problems.
-                    Specialized in high-performance APIs and distributed architectures.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
-                >
-                    <Link
-                        href="#projects"
-                        className="group px-8 py-3.5 bg-[var(--accent-primary)] text-black font-semibold rounded-full flex items-center gap-2 hover:bg-[var(--accent-primary)]/90 transition-all hover:scale-105"
+                    <motion.p
+                        variants={fadeInUp}
+                        className="max-w-2xl mx-auto text-lg md:text-xl text-[var(--text-secondary)] mb-10 leading-relaxed"
                     >
-                        View My Work
-                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                        Building robust, scalable server-side systems and solving complex engineering problems.
+                        Specialized in high-performance APIs and distributed architectures.
+                    </motion.p>
 
-                    <Link
-                        href="/resume.pdf"
-                        target="_blank"
-                        className="group px-8 py-3.5 border border-[var(--border)] text-[var(--text-primary)] font-medium rounded-full flex items-center gap-2 hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-all"
+                    <motion.div
+                        variants={fadeInUp}
+                        className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
-                        Download Resume
-                        <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
-                    </Link>
+                        <Link
+                            href="#projects"
+                            className="group px-8 py-3.5 bg-[var(--accent-primary)] text-black font-semibold rounded-full flex items-center gap-2 hover:bg-[var(--accent-primary)]/90 transition-all hover:scale-105"
+                        >
+                            View My Work
+                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+
+                        <Link
+                            href="/resume.pdf"
+                            target="_blank"
+                            className="group px-8 py-3.5 border border-[var(--border)] text-[var(--text-primary)] font-medium rounded-full flex items-center gap-2 hover:bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)] transition-all"
+                        >
+                            Download Resume
+                            <Download size={18} className="group-hover:-translate-y-1 transition-transform" />
+                        </Link>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>

@@ -3,15 +3,16 @@
 import { experiences } from "@/data/experience";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import { fadeInUp, fadeInLeft } from "@/lib/animations";
 
 export default function Experience() {
     return (
         <section id="experience" className="py-20 bg-[var(--bg-primary)]">
             <div className="max-w-4xl mx-auto px-4">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
@@ -23,10 +24,11 @@ export default function Experience() {
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={exp.id}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            variants={fadeInLeft}
+                            initial="initial"
+                            whileInView="whileInView"
                             viewport={{ once: true }}
+                            custom={index}
                             className="relative pl-8 md:pl-12"
                         >
                             {/* Timeline Dot */}

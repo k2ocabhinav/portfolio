@@ -2,33 +2,18 @@
 
 import { skills } from "@/data/skills";
 import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, itemFadeIn } from "@/lib/animations";
 
 export default function Skills() {
     const categories = Array.from(new Set(skills.map((s) => s.category)));
-
-    // Animation variants
-    const container = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const item = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0 }
-    };
 
     return (
         <section id="skills" className="py-20 bg-[var(--bg-primary)]">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
@@ -47,7 +32,7 @@ export default function Skills() {
                                 {category}
                             </h3>
                             <motion.div
-                                variants={container}
+                                variants={staggerContainer}
                                 initial="hidden"
                                 whileInView="show"
                                 viewport={{ once: true }}
@@ -58,7 +43,7 @@ export default function Skills() {
                                     .map((skill) => (
                                         <motion.div
                                             key={skill.name}
-                                            variants={item}
+                                            variants={itemFadeIn}
                                             className="group"
                                         >
                                             <div className="flex justify-between mb-1">

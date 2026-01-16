@@ -3,15 +3,16 @@
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/animations";
 
 export default function Projects() {
     return (
         <section id="projects" className="py-20 bg-[var(--bg-secondary)]">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
@@ -28,10 +29,11 @@ export default function Projects() {
                         {projects.map((project, index) => (
                             <motion.div
                                 key={project.id}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                variants={fadeInUp}
+                                initial="initial"
+                                whileInView="animate"
                                 viewport={{ once: true }}
+                                custom={index}
                             >
                                 <ProjectCard project={project} />
                             </motion.div>

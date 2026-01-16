@@ -2,15 +2,16 @@
 
 import { motion } from "framer-motion";
 import { User, Code, Server, Database } from "lucide-react";
+import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
 
 export default function About() {
     return (
         <section id="about" className="py-20 bg-[var(--bg-secondary)]">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
@@ -21,9 +22,9 @@ export default function About() {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Photo Placeholder */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
+                        variants={fadeInLeft}
+                        initial="initial"
+                        whileInView="whileInView"
                         viewport={{ once: true }}
                         className="relative justify-self-center md:justify-self-end"
                     >
@@ -39,9 +40,9 @@ export default function About() {
 
                     {/* Bio Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
+                        variants={fadeInRight}
+                        initial="initial"
+                        whileInView="whileInView"
                         viewport={{ once: true }}
                     >
                         <h3 className="text-2xl font-semibold mb-6 text-[var(--text-primary)]">
