@@ -33,8 +33,12 @@ export default function Contact() {
             setTimeout(() => setStatus("idle"), 5000);
         } catch {
             setStatus("error");
+            // Reset error status after 5 seconds
+            setTimeout(() => setStatus("idle"), 5000);
         }
     };
+
+    const [errorMessage, setErrorMessage] = useState("");
 
     return (
         <section id="contact" className="py-20 bg-[var(--bg-secondary)]">
@@ -159,8 +163,8 @@ export default function Contact() {
                                 type="submit"
                                 disabled={status === "loading" || status === "success"}
                                 className={`w-full py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${status === "success"
-                                        ? "bg-[var(--success)] text-white"
-                                        : "bg-[var(--accent-primary)] text-black hover:bg-[var(--accent-primary)]/90"
+                                    ? "bg-[var(--success)] text-white"
+                                    : "bg-[var(--accent-primary)] text-black hover:bg-[var(--accent-primary)]/90"
                                     } disabled:opacity-70 disabled:cursor-not-allowed`}
                             >
                                 {status === "loading" ? (
