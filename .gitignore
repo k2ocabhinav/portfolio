@@ -60,3 +60,6 @@ credentials/
 
 # OS generated
 Thumbs.db
+
+# Private documentation (not for GitHub)
+.docs/
