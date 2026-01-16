@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+}
+
+:root {
+  /* Light Mode (Default variables, will be overridden by dark mode class if we use purely class-based, 
+     but spec says Dark Mode Default. Let's stick to the spec's variable definitions) */
+  
+  /* Actually, spec says Dark Mode Default. We should set defaults to Dark Mode values 
+     and override for light mode data attribute */
+  --bg-primary: #0F1419;
+  --bg-secondary: #1A1F2E;
+  --text-primary: #E8E9EB;
+  --text-secondary: #A0A5B0;
+  --accent-primary: #00D9FF;
+  --accent-secondary: #FF006E;
+  --border: #2A3142;
+  --success: #00D97E;
+}
+
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F7FB;
+  --text-primary: #1A1F2E;
+  --text-secondary: #5F6B7E;
+  --accent-primary: #0066D9;
+  --accent-secondary: #D9006E;
+  --border: #D9E0E8;
+  --success: #00B86E;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
