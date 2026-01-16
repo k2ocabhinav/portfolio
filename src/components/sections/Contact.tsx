@@ -42,7 +42,7 @@ export default function Contact() {
     const [errorMessage, setErrorMessage] = useState("");
 
     return (
-        <section id="contact" className="py-20 bg-[var(--bg-secondary)]">
+        <section id="contact" className="py-12 md:py-20 bg-[var(--bg-secondary)]">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.div
                     variants={fadeInUp}
@@ -59,7 +59,7 @@ export default function Contact() {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
                     {/* Contact Info */}
                     <motion.div
                         variants={fadeInLeft}

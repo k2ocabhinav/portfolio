@@ -7,7 +7,7 @@ import { fadeInUp, fadeInLeft } from "@/lib/animations";
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-20 bg-[var(--bg-primary)]">
+        <section id="experience" className="py-12 md:py-20 bg-[var(--bg-primary)]">
             <div className="max-w-4xl mx-auto px-4">
                 <motion.div
                     variants={fadeInUp}
@@ -20,7 +20,7 @@ export default function Experience() {
                     <div className="w-20 h-1 bg-[var(--accent-primary)] mx-auto rounded-full" />
                 </motion.div>
 
-                <div className="relative border-l-2 border-[var(--border)] ml-3 md:ml-6 space-y-12">
+                <div className="relative border-l-2 border-[var(--border)] ml-3 md:ml-6 space-y-8 md:space-y-12">
                     {experiences.map((exp, index) => (
                         <motion.div
                             key={exp.id}
@@ -29,7 +29,7 @@ export default function Experience() {
                             whileInView="whileInView"
                             viewport={{ once: true }}
                             custom={index}
-                            className="relative pl-8 md:pl-12"
+                            className="relative pl-6 md:pl-12"
                         >
                             {/* Timeline Dot */}
                             <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[var(--accent-primary)] shadow-[0_0_0_4px_var(--bg-primary)]" />

@@ -9,7 +9,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative min-h-[calc(100vh-70px)] flex items-center justify-center overflow-hidden bg-[var(--bg-primary)]"
+            className="relative min-h-[calc(100vh-70px)] flex items-center justify-center overflow-hidden bg-[var(--bg-primary)] px-4"
         >
             {/* Background Gradient/Mesh */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -29,8 +29,11 @@ export default function Hero() {
                         </h2>
                     </motion.div>
 
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
+                        Abhinav
+                    </h1>
                     <motion.div variants={fadeInUp}>
-                        <h1 className="text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] mb-6 tracking-tight">
                             Abhinav
                         </h1>
                     </motion.div>
@@ -72,6 +75,6 @@ export default function Hero() {
                     </motion.div>
                 </motion.div>
             </div>
-        </section>
+        </section >
     );
 }

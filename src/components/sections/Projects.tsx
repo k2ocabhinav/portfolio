@@ -7,14 +7,14 @@ import { fadeInUp } from "@/lib/animations";
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-20 bg-[var(--bg-secondary)]">
+        <section id="projects" className="py-12 md:py-20 bg-[var(--bg-secondary)]">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.div
                     variants={fadeInUp}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-10 md:mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
                     <div className="w-20 h-1 bg-[var(--accent-primary)] mx-auto rounded-full mb-8" />

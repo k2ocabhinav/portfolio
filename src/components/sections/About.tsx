@@ -6,7 +6,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
 
 export default function About() {
     return (
-        <section id="about" className="py-20 bg-[var(--bg-secondary)]">
+        <section id="about" className="py-12 md:py-20 bg-[var(--bg-secondary)]">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.div
                     variants={fadeInUp}
